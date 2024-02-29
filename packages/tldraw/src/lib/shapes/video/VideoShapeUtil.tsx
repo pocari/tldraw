@@ -172,6 +172,9 @@ const TLVideoUtilComponent = track(function TLVideoUtilComponent(props: {
 	React.useEffect(() => {
 		if (prefersReducedMotion) {
 			const video = rVideo.current
+
+			if (!video) return
+
 			video.pause()
 			video.currentTime = 0
 		}
